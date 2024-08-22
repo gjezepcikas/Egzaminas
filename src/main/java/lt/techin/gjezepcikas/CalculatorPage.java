@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
 
 public class CalculatorPage extends BasePage {
 
@@ -14,40 +13,48 @@ public class CalculatorPage extends BasePage {
     @FindBy(css = "[name='sk2']")
     private WebElement inputTwo;
 
-    @FindBy(css = "form#number > select[name='zenklas']")
+    @FindBy(css = "[name='zenklas']")
     private WebElement operandDropDown;
-
-    @FindBy(css = "")
-    private WebElement chooseFromDropDown;
-
-    @FindBy
-    private <List>
 
 
     @FindBy(css = "[type='submit']")
     private WebElement submitButton;
 
+    @FindBy(css = "span#sk2\\.errors")
+    private WebElement errorMessage;
+
     public CalculatorPage(WebDriver driver) {
         super(driver);
     }
 
-    public void inputOne (String numberOne){
+    public void inputOne(String numberOne) {
         inputOne.click();
+        inputOne.clear();
         inputOne.sendKeys(numberOne);
     }
 
-    public void inputTwo (String numberTwo){
+    public void inputTwo(String numberTwo) {
         inputTwo.click();
+        inputTwo.clear();
         inputTwo.sendKeys(numberTwo);
     }
 
-    public void operandDropDown (){
-        inputOne.click();
-        inputOne.sendKeys();
-    }
-    public void submitButton (){
+    public void operandDropDown() {
         inputOne.click();
     }
 
+    public void submitButton() {
+        submitButton.click();
+    }
+
+    public void operandsInDropDown(String randomOperand) {
+        operandDropDown.click();
+        operandDropDown.sendKeys(randomOperand);
+    }
+
+    public String errorMessage() {
+        return errorMessage.getText();
+    }
 
 }
+

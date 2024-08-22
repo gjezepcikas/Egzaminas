@@ -45,7 +45,7 @@ public class LoginTest extends BaseTest {
         loginPage.clickLoginButton();
 
         assertEquals("http://localhost:8080/prisijungti?error", driver.getCurrentUrl(), "Expected URL and current URL doesn't match!!!");
-        assertEquals("Įvestas prisijungimo vardas ir/ arba slaptažodis yra neteisingi",loginPage.loginErrorMessage());
+        assertEquals("Įvestas prisijungimo vardas ir/ arba slaptažodis yra neteisingi", loginPage.loginErrorMessage());
 
     }
 
@@ -62,7 +62,7 @@ public class LoginTest extends BaseTest {
         loginPage.clickLoginButton();
 
         assertEquals("http://localhost:8080/prisijungti?error", driver.getCurrentUrl(), "Expected URL and current URL doesn't match!!!");
-        assertEquals("Įvestas prisijungimo vardas ir/ arba slaptažodis yra neteisingi",loginPage.loginErrorMessage());
+        assertEquals("Įvestas prisijungimo vardas ir/ arba slaptažodis yra neteisingi", loginPage.loginErrorMessage());
 
     }
 

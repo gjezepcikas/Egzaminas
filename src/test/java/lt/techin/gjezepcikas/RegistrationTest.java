@@ -43,8 +43,6 @@ public class RegistrationTest extends BaseTest {
     @Tag("Negative")
     void negativeCreateAccountTest() {
 
-        ConfigUtility.setProperty("firstName", firstName);
-        ConfigUtility.setProperty("password", password);
 
         RegistrationPage registrationPage = new RegistrationPage(driver);
         LoginPage loginPage = new LoginPage(driver);
